@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('detail_transaksi', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('id_transaksi');
-            $table->string('total');
-            $table->string('qty');
+        Schema::table('users', function (Blueprint $table) {
+            //
+            $table->string('level');
         });
     }
 
@@ -29,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_transaksi');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };
